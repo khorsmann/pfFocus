@@ -79,7 +79,7 @@ class PfSenseAliasString(PfSenseString):
     @property
     def data(self):
         data = super().data
-        if hasattr_r(self.rootdoc.pfsense, 'aliases'):
+        if hasattr_r(self.rootdoc.pfsense, 'aliases.alias'):
             for alias in self.rootdoc.pfsense.aliases.alias:
                 if alias.name.string == data:
                     return {'alias': alias.data}
